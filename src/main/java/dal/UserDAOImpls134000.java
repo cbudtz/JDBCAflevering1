@@ -1,10 +1,9 @@
 package dal;
 
+import dto.IUserDTO;
 import dto.UserDTO;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 //TODO Rename class
@@ -17,12 +16,10 @@ public class UserDAOImpls134000 implements IUserDAO {
 
     @Override
     public UserDTO getUser(int userId) throws DALException {
-
-
         //TODO Implement this - should retrieve a user from db and parse it to a UserDTO
-       try (Connection c = createConnection()){
-
-
+       try (Connection connection = createConnection()){
+           Statement statement = connection.createStatement();
+           ResultSet resultSet = statement.executeQuery("SKRIV DIT QUERY HER!!!!!");
            UserDTO user = new UserDTO();
            //TODO: Make a user from the resultset
            return user;
@@ -32,21 +29,26 @@ public class UserDAOImpls134000 implements IUserDAO {
 
     }
 
+    @Override
+    public IUserDTO getUserByIni(String initials) throws DALException {
+        //TODO Implement this - Should retrieve ALL users from db and parse the resultset to a List of UserDTO's.
+        return null;
+    }
 
 
     @Override
-    public List<UserDTO> getUserList() throws DALException {
+    public List<IUserDTO> getUserList() throws DALException {
         //TODO Implement this - Should retrieve ALL users from db and parse the resultset to a List of UserDTO's.
         return null;
     }
 
     @Override
-    public void createUser(UserDTO user) throws DALException {
+    public void createUser(IUserDTO user) throws DALException {
         //TODO Implement this - Should insert a user into the db using data from UserDTO object.
     }
 
     @Override
-    public void updateUser(UserDTO user) throws DALException {
+    public void updateUser(IUserDTO user) throws DALException {
         //TODO Implement this - Should update a user in the db using data from UserDTO object.
     }
 
