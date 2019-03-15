@@ -15,12 +15,12 @@ public class UserDAOImpls134000 implements IUserDAO {
     }
 
     @Override
-    public UserDTO getUser(int userId) throws DALException {
+    public IUserDTO getUser(int userId) throws DALException {
         //TODO Implement this - should retrieve a user from db and parse it to a UserDTO
        try (Connection connection = createConnection()){
            Statement statement = connection.createStatement();
            ResultSet resultSet = statement.executeQuery("SKRIV DIT QUERY HER!!!!!");
-           UserDTO user = new UserDTO();
+           IUserDTO user = new UserDTO();
            //TODO: Make a user from the resultset
            return user;
         } catch (SQLException e) {
@@ -32,6 +32,7 @@ public class UserDAOImpls134000 implements IUserDAO {
     @Override
     public IUserDTO getUserByIni(String initials) throws DALException {
         //TODO Implement this - Should retrieve a user from db and parse it to a UserDTO
+
         return null;
     }
 
