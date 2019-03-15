@@ -31,7 +31,7 @@ public class UserDAOImpls134000 implements IUserDAO {
 
     @Override
     public IUserDTO getUserByIni(String initials) throws DALException {
-        //TODO Implement this - Should retrieve ALL users from db and parse the resultset to a List of UserDTO's.
+        //TODO Implement this - Should retrieve a user from db and parse it to a UserDTO
         return null;
     }
 
